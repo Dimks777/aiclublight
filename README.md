@@ -20,9 +20,17 @@
 
 Требования: [OpenClaw](https://openclaw.ai), Node.js 18+
 
+**Доступ только для участников клуба.** Получи персональный токен:
+
+1. Напиши боту [@aiclub_gate_bot](https://t.me/aiclub_gate_bot) команду `/install`
+2. Бот выдаст токен и готовую команду для установки
+3. Вставь команду в терминал на сервере
+
 ```bash
-curl -sSL https://raw.githubusercontent.com/Dimks777/aiclublight/main/install.sh | bash
+curl -sSL "https://gate.yourserver.com/install?token=ТВОЙ_ТОКЕН" | bash
 ```
+
+Токен действует 24 часа и рассчитан на 3 установки.
 
 ## После установки
 
