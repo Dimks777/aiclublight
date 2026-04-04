@@ -11,7 +11,7 @@ CHECK="${GREEN}✓${RESET}"
 ARROW="${CYAN}→${RESET}"
 CROSS="${RED}✗${RESET}"
 
-REPO="Dimks777/aiclub-lite"
+REPO="Dimks777/aiclublight"
 
 echo ""
 echo -e "  ${BOLD}${CYAN}🏭 Фабрика Контента Lite${RESET}"
@@ -75,7 +75,7 @@ if $HAS_GIT; then
 else
   curl -sfL "https://github.com/$REPO/archive/main.tar.gz" -o "$TMPDIR/factory.tar.gz"
   tar xzf "$TMPDIR/factory.tar.gz" -C "$TMPDIR" 2>/dev/null
-  mv "$TMPDIR/aiclub-lite-main" "$TMPDIR/factory" 2>/dev/null || true
+  mv "$TMPDIR/aiclublight-main" "$TMPDIR/factory" 2>/dev/null || true
 fi
 
 if [ -d "$TMPDIR/factory/factory" ]; then

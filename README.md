@@ -21,7 +21,7 @@
 Требования: [OpenClaw](https://openclaw.ai), Node.js 18+
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/Dimks777/aiclub-lite/main/install.sh | bash
+curl -sSL https://raw.githubusercontent.com/Dimks777/aiclublight/main/install.sh | bash
 ```
 
 ## После установки
