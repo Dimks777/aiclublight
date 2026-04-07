@@ -550,8 +550,7 @@ if (!c.agents.defaults.contextPruning) c.agents.defaults.contextPruning = { mode
 if (!c.agents.defaults.compaction) c.agents.defaults.compaction = { mode: 'safeguard', reserveTokensFloor: 20000, memoryFlush: { enabled: true, softThresholdTokens: 4000 } };
 if (!c.agents.defaults.memorySearch) c.agents.defaults.memorySearch = { enabled: true, sources: ['memory'], provider: 'openai', model: 'text-embedding-3-small', query: { maxResults: 8, minScore: 0.3 } };
 if (!c.session) c.session = { reset: { mode: 'daily', atHour: 4 } };
-if (!c.gateway) c.gateway = { mode: 'local', port: 18789, bind: 'loopback', auth: { mode: 'none' } };
-if (!c.gateway.auth) c.gateway.auth = { mode: 'none' };
+if (!c.gateway) c.gateway = { mode: 'local', port: 18789, bind: 'loopback' };
 
 // Skills
 const home = require('os').homedir();
