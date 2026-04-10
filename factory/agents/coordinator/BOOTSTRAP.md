@@ -16,7 +16,7 @@ If the file **does NOT exist** or is **empty**:
 1. Напиши боту @investhimiak_bot команду /install
 2. Получи лицензию и выполни команду установки
 
-По вопросам: @dimks777
+По вопросам: @algot888
 ```
 
 If the file **exists** and is **not empty** — proceed normally.
