@@ -1,5 +1,6 @@
 # Фабрика Контента Lite
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Часть InvestClub](https://img.shields.io/badge/🐹%20Часть-hamster.club-F59E0B)](https://humster.club/aiclub/) [![Telegram Bot](https://img.shields.io/badge/Telegram-@investhimiak__bot-26A5E4)](https://t.me/investhimiak_bot) [![Lite Version](https://img.shields.io/badge/Версия-Lite-FCD34D)](https://humster.club/aiclub/1agent/intro.html)
 Лайт-версия [Фабрики Контента](https://github.com/Dimks777/aiclub) — 1 агент + 5 скиллов для быстрого старта с OpenClaw.
 
 ## Что внутри
