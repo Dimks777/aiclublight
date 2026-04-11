@@ -1,8 +1,10 @@
 # 🐹 Фабрика Контента Lite
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Часть hamster.club](https://img.shields.io/badge/🐹%20InvestClub-hamster.club-F59E0B)](https://humster.club/aiclub/) [![Telegram Bot](https://img.shields.io/badge/Telegram-@aiclub10__bot-26A5E4)](https://t.me/aiclub10_bot)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Часть hamster.club](https://img.shields.io/badge/🐹%20InvestClub-hamster.club-F59E0B)](https://humster.club/aiclub/) [![Telegram Bot](https://img.shields.io/badge/Telegram-@investhimiak__bot-26A5E4)](https://t.me/investhimiak_bot)
 
 Лайт-версия [Фабрики Контента](https://github.com/Dimks777/aiclub) — 1 агент + 5 скиллов для быстрого старта с OpenClaw.
+
+> ⚠️ **Установщик защищён лицензией клуба.** Прямой `git clone` без получения ключа через бота не сработает — `install.sh` отказывается запускаться без валидной лицензии.
 
 ## Что внутри
 
@@ -22,9 +24,9 @@
 
 Требования: [OpenClaw](https://openclaw.ai), Node.js 18+
 
-**Доступ только для участников клуба.** Получи персональный ключ:
+**Доступ только для участников клуба.** Получи персональный ключ Lite:
 
-1. Напиши боту [@aiclub10_bot](https://t.me/aiclub10_bot) команду `/install`
+1. Напиши боту [@investhimiak_bot](https://t.me/investhimiak_bot) команду `/install`
 2. Бот проверит, что ты в группе клуба, и выдаст ключ + готовую команду
 3. Вставь команду в терминал на сервере
 

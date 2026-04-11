@@ -1,5 +1,5 @@
 #!/bin/bash
-# Фабрика Контента Lite — Установщик v3.0
+# Фабрика Контента Lite — Установщик v3.1
 # 1 агент + 5 скиллов для участников AI Club
 # НЕ используем set -e — все ошибки обрабатываем явно
 
@@ -16,10 +16,66 @@ CHECK="${GREEN}✓${RESET}"
 CROSS="${RED}✗${RESET}"
 ARROW="${CYAN}→${RESET}"
 
+# ============================================================
+#  ЛИЦЕНЗИОННАЯ ПРОВЕРКА (InvestClub)
+#  Этот установщик предназначен только для участников клуба.
+#  Lite-лицензию выдаёт бот @investhimiak_bot после проверки членства.
+# ============================================================
+
+GATE_VERIFY_URL="${GATE_VERIFY_URL:-http://humsterclub.duckdns.org/gate/verify}"
+LICENSE_FILE="$HOME/.openclaw/.aiclub-license"
+
+LICENSE_KEY="${AICLUB_LICENSE_KEY:-}"
+if [ -z "$LICENSE_KEY" ] && [ -f "$LICENSE_FILE" ]; then
+  LICENSE_KEY=$(cat "$LICENSE_FILE" 2>/dev/null | tr -d '[:space:]')
+fi
+
+if [ -z "$LICENSE_KEY" ]; then
+  echo ""
+  echo -e "  ${RED}❌ Лицензионный ключ не найден${RESET}"
+  echo ""
+  echo -e "  Этот установщик предназначен только для участников ${BOLD}клуба InvestClub${RESET}."
+  echo ""
+  echo -e "  ${BOLD}Получи персональный ключ Lite:${RESET}"
+  echo -e "    1. Открой бота ${CYAN}@investhimiak_bot${RESET} в Telegram"
+  echo -e "    2. Напиши команду ${CYAN}/install${RESET}"
+  echo -e "    3. Бот проверит твоё членство в группе и пришлёт готовую команду установки"
+  echo ""
+  echo -e "  ${DIM}Документация: https://humster.club/aiclub/1agent/install-1agent.html${RESET}"
+  echo ""
+  exit 1
+fi
+
+echo ""
+echo -e "  ${ARROW} Проверяю лицензию Lite..."
+RESULT=$(curl -sf --max-time 10 "${GATE_VERIFY_URL}?key=${LICENSE_KEY}" 2>/dev/null || echo "")
+
+if echo "$RESULT" | grep -q '"valid":true'; then
+  MEMBER=$(echo "$RESULT" | sed -n 's/.*"member":"\([^"]*\)".*/\1/p')
+  echo -e "  ${CHECK} Лицензия активна (участник: ${BOLD}${MEMBER:-unknown}${RESET})"
+elif echo "$RESULT" | grep -q '"valid":false'; then
+  REASON=$(echo "$RESULT" | sed -n 's/.*"reason":"\([^"]*\)".*/\1/p')
+  echo -e "  ${CROSS} Лицензия не действительна (${REASON:-unknown})"
+  echo ""
+  echo -e "  Возможно, ты вышел из группы клуба. Получи новый ключ:"
+  echo -e "  → @investhimiak_bot → /install"
+  echo ""
+  exit 1
+else
+  echo -e "  ${CROSS} Не удалось связаться с gate-сервером ($GATE_VERIFY_URL)"
+  echo -e "  Проверь интернет и повтори установку."
+  exit 1
+fi
+echo ""
+
+# ============================================================
+#  ОРИГИНАЛЬНЫЙ УСТАНОВЩИК
+# ============================================================
+
 clear 2>/dev/null || true
 echo ""
 echo -e "  ${BOLD}${CYAN}🏭 Фабрика Контента Lite${RESET}"
-echo -e "  ${BOLD}One-Command Installer v3.0${RESET}"
+echo -e "  ${BOLD}One-Command Installer v3.1${RESET}"
 echo -e "  ${BOLD}1 агент · 5 скиллов · быстрый старт${RESET}"
 echo -e "  ═══════════════════════════════════════"
 echo ""
